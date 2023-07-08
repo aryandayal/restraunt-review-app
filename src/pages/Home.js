@@ -31,16 +31,18 @@ const Home = () => {
             </Link>
             <section className="menu-list">
               {menu.map(({ name, imgSrc, price, qty }) => (
-                <article className="dish-card">
-                  <img src={imgSrc} alt="dish img"></img>
-                  <div className="dish-details">
-                    <h4>{name}</h4>
-                    <p>
-                      Rs.{price} for {qty}
-                    </p>
-                    <p>{restroName}</p>
-                  </div>
-                </article>
+                <Link to={"/restaurant/" + restroName} key={name}>
+                  <article className="dish-card">
+                    <img src={imgSrc} alt="dish img"></img>
+                    <div className="dish-details">
+                      <h4>{name}</h4>
+                      <p>
+                        Rs.{price} for {qty}
+                      </p>
+                      <p>{restroName}</p>
+                    </div>
+                  </article>
+                </Link>
               ))}
             </section>
           </div>
